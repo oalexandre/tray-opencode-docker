@@ -1,8 +1,5 @@
 FROM ubuntu
 
-LABEL maintainer="contato@brunoferreira.dev"
-LABEL version="1.0"
-
 WORKDIR /usr/app
 
 RUN apt-get update
@@ -13,6 +10,9 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 # Install ruby and rbenv
 RUN apt-get -y install ruby-full
 RUN apt-get -y install rbenv
+RUN apt-get -y install git
+RUN apt-get -y install npm
+
 
 # Fix problem with libssl1.0-dev
 RUN echo "deb http://security.ubuntu.com/ubuntu bionic-security main" >> /etc/apt/sources.list

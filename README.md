@@ -40,11 +40,16 @@ docker-compose up
 docker-compose up -d
 ```
 
-Com isso o docker irá baixar o tema dentro da pasta **/dist** e ficará observando as mudanças realizadas nos arquivos.  
+Com isso o docker irá baixar o tema dentro da pasta **/dist** e ficará observando as mudanças realizadas nos arquivos.
+IMPORTANTE: toda a vêz que você rodar o docker-compose ele fará o download do tema novamente, logo, certifique-se de somente fazer alterações enquanto o container estiver rodadno. Caso contrário perderá suas alterações.
 
 Caso queira executar outros comandos do opencode, deve entrar no container com o seguinte comando:
 
 ```shell
+#descobrir o ID do container
+docker ps
+
+#rodar o Shell dentro do container
 docker exec it ID_DO_CONTAINER /bin/sh
 ```
 
